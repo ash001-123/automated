@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Automated Teller Machine</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+          
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Fast Online Withdrawal</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">If you are looking for an AUTOMATED TELLER MACHINE which makes every process fast !</p>
+                       <h1 class="text-white font-weight-bold">THANK YOU!</h1>
+<script>
+
+  var balance = 50000; //set initial balance.
+
+    function get_balance() {
+        alert('Your current balance is: '+balance);
+        atm();
+    }
+
+    function make_deposit() {
+        var deposit = parseFloat(prompt('How much would you like to deposit?'));
+        if (isNaN(deposit) || deposit === '') {
+            alert('Error: please enter a number!');
+            make_deposit();
+        } else {
+            balance += deposit;
+            get_balance();
+        }
+    }
+
+    function make_withdrawal() {
+        var withdrawal = parseFloat(prompt('How much would you like to withdrawal?'));
+        if (isNaN(withdrawal) || withdrawal === '') {
+            alert('Error: please enter a number!');
+            make_withdrawal();
+        } else {
+            balance -= withdrawal;
+            get_balance();
+        }
+    }
+
+    function error() {
+        alert('Error: accepted numbers are 1 through 4.');
+        atm();
+    }
+
+    function exit() {
+        var confirm_leave = confirm('You have selected exit.');
+        if (confirm_leave) {
+            window.close();
+        } else {
+            atm();
+        }
+    }
+
+    function atm() {
+
+        var choice = parseInt(prompt('Select a Transaction 1.) Balance 2.) Deposit 3.) Withdrawal 4.) Exit')); //prompt user for choice.
+
+        if (choice === 1) {
+            get_balance();
+        } else if (choice === 2) {
+            make_deposit();
+        } else if (choice === 3) {
+            make_withdrawal();
+        } else if (choice === 4) {
+            exit();
+        } else {
+            error();
+        }
+    }
+
+    atm();
+
+
+</script>
+
+
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
